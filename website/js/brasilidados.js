@@ -1,5 +1,6 @@
 jQuery(function($) { 
 	$('#info-wrapper').mouseover(openEye);
+	$('#info-wrapper').click(openEye);
 	$('#bottom-header span.red-text').click(openEye);
 	
 	$('#top-header').mouseover(closeEye);
@@ -12,8 +13,8 @@ var openEye = function() {
 	
 	$('#bottom-header h1').stop(true,false).animate({paddingTop: '20px'}, {duration: 400});
 	$('#bottom-header').stop(true,false).animate({height: '130px'}, {duration: 400});
-	$('#top-footer').stop(true,false).animate({top: '450px', height: '50px'}, {duration: 400});
-	$('#info-wrapper').stop(true,false).animate({top: '200px', height: '250px'}, {duration: 400});
+	$('#top-footer').stop(true,false).animate({top: '420px', height: '50px'}, {duration: 400});
+	$('#info-wrapper').stop(true,false).animate({top: '170px', height: '250px'}, {duration: 400});
 	
 }
 
@@ -21,8 +22,8 @@ var closeEye = function() {
 	
 	$('#bottom-header h1').stop(true,false).animate({paddingTop: '90px'}, {duration: 1000});
 	$('#bottom-header').stop(true,false).animate({height: '280px'}, {duration: 1000});
-	$('#top-footer').stop(true,false).animate({top: '390px', height: '110px'}, {duration: 1000});
-	$('#info-wrapper').stop(true,false).animate({top: '350px', height: '40px'}, {duration: 1000});
+	$('#top-footer').stop(true,false).animate({top: '360px', height: '110px'}, {duration: 1000});
+	$('#info-wrapper').stop(true,false).animate({top: '320px', height: '40px'}, {duration: 1000});
 	
 }
 

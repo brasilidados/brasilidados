@@ -6,9 +6,10 @@
     <title>IDH no Brasil | brasilidados</title>
     
     <style type="text/css">		
-		body {
-			margin-top: 0;
+		#viz body {
+			margin: 0;
 			text-align: center;
+			background-color: #FFF;
 		}
 		
 		#viz h2 {
@@ -41,7 +42,11 @@
 			float: left;
 			width: 180px;
 			height: 600px;
-			background-color: rgba(0,0,0,.09);
+			background-color: rgba(0,0,0,.1);
+			-webkit-box-shadow: 10px 0 5px -5px rgba(0, 0, 0, 0.15);
+			-moz-box-shadow: 10px 0 5px -5px rgba(0, 0, 0, 0.15);
+			box-shadow: 10px 0 5px -5px rgba(0, 0, 0, 0.15);
+			
 		}
 		
 		#viz-ranking {
@@ -49,7 +54,10 @@
 			float: left;
 			width: 180px;
 			height: 600px;
-			background-color: rgba(0,0,0,.06);
+			background-color: rgba(0,0,0,.05);
+			-webkit-box-shadow: 10px 0 5px -5px rgba(0, 0, 0, 0.15);
+			-moz-box-shadow: 10px 0 5px -5px rgba(0, 0, 0, 0.15);
+			box-shadow: 10px 0 5px -5px rgba(0, 0, 0, 0.15);
 		}
 		
 		#viz-main {
@@ -57,7 +65,7 @@
 			float: left;
 			width: 600px;
 			height: 600px;
-			background-color: rgba(0,0,0,.03);
+			background-color: rgba(0,0,0,0);
 		}
 		
 		#viz-intro {
@@ -79,7 +87,7 @@
 			padding: 10px;
 			line-height: 20px;
 			overflow: auto;
-			background-color: white;
+			background-color: #F2D13E;
 		}
 		
 		.active {
@@ -218,10 +226,39 @@
                 <p>Interaja e customize a sua visualização:<br/>
                 	<span class="red-text">> Clique nos estados</span> que quer ver em destaque.<br/>
                 	<span class="red-text">> Escolha os valores</span> para Ranking & Cores, Eixo-y, Eixo-x e Área dos círculos.<br/>
-                	<span class="red-text">> Passe o mouse</span> (ou o dedo) sobre os anos para perceber as variações anuais.</p>
+                	<span class="red-text">> Passe o mouse</span> ou toque sobre os anos para perceber as variações anuais.</p>
                 <p>O cálculo do Índice de Desenvolvimento Humano (IDH) usa diversos indicadores sobre <span class="red-text">RENDA, POPULAÇÃO, MORTALIDADE, LONGEVIDADE, FECUNDIDADE, ENVELHECIMENTO, EDUCAÇÃO e CONDIÇÕES DE MORADIA</span>. Todos eles estão incluidos aqui!
                 <!-- Índice de Desenvolvimento Humano (IDH) é uma medida comparativa usada para avaliar o grau de "desenvolvimento humano" local. É calculado a partir de dados sobre Longevidade, Educação e Renda. Visualize aqui os 177 principais índices relativos ao IDH de cada estado brasileiro, em 1991, 2000 e 2010.A cada ano, os países membros da ONU são classificados de acordo com essas medidas, que refletem o grau de qualidade de vida local. Nesta visualização exploramos o IDH dos estados brasileiros, bem como todos os dados usados para seu cálculo, nos anos de 1992, 2000 e 2010.--></p>
             </div>
+        	<div id="viz-ano"></div>
+        	<div id="viz-mapa"></div>
+            <div class="viz-mapa-label" id="labelAC">Acre</div>
+            <div class="viz-mapa-label" id="labelAL">Alagoas</div>
+            <div class="viz-mapa-label" id="labelAP">Amapá</div>
+            <div class="viz-mapa-label" id="labelAM">Amazonas</div>
+            <div class="viz-mapa-label" id="labelBA">Bahia</div>
+            <div class="viz-mapa-label" id="labelCE">Ceará</div>
+            <div class="viz-mapa-label" id="labelDF">Distrito Federal</div>
+            <div class="viz-mapa-label" id="labelES">Espírito Santo</div>
+            <div class="viz-mapa-label" id="labelGO">Goiás</div>
+            <div class="viz-mapa-label" id="labelMA">Maranhão</div>
+            <div class="viz-mapa-label" id="labelMT">Mato Grosso</div>
+            <div class="viz-mapa-label" id="labelMS">Mato Grosso do Sul</div>
+            <div class="viz-mapa-label" id="labelMG">Minas Gerais</div>
+            <div class="viz-mapa-label" id="labelPA">Pará</div>
+            <div class="viz-mapa-label" id="labelPB">Paraíba</div>
+            <div class="viz-mapa-label" id="labelPR">Paraná</div>
+            <div class="viz-mapa-label" id="labelPE">Pernambuco</div>
+            <div class="viz-mapa-label" id="labelPI">Piauí</div>
+            <div class="viz-mapa-label" id="labelRJ">Rio de Janeiro</div>
+            <div class="viz-mapa-label" id="labelRN">Rio Grande do Norte</div>
+            <div class="viz-mapa-label" id="labelRS">Rio Grande do Sul</div>
+            <div class="viz-mapa-label" id="labelRO">Rondônia</div>
+            <div class="viz-mapa-label" id="labelRR">Roraima</div>
+            <div class="viz-mapa-label" id="labelSC">Santa Catarina</div>
+            <div class="viz-mapa-label" id="labelSP">São Paulo</div>
+            <div class="viz-mapa-label" id="labelSE">Sergipe</div>
+            <div class="viz-mapa-label" id="labelTO">Tocantins</div>
             <div class="viz-descricao" id="IDHM"><h2>IDH</h2><p>Índice de Desenvolvimento Humano. Média geométrica dos índices das dimensões Renda, Educação e Longevidade, com pesos iguais.</p></div>
             <div class="viz-descricao" id="IDHM_E"><h2>IDH Educação</h2><p>Índice sintético da dimensão Educação que é um dos 3 componentes do IDH. É obtido através da média geométrica do subíndice de frequência de crianças e jovens à escola, com peso de 2/3, e do subíndice de escolaridade da população adulta, com peso de 1/3.</p></div>
             <div class="viz-descricao" id="IDHM_L"><h2>IDH Longevidade</h2><p>Índice da dimensão Longevidade que é um dos 3 componentes do IDH. É obtido a partir do indicador Esperança de vida ao nascer, através da fórmula: [(valor observado do indicador) - (valor mínimo)] / [(valor máximo) - (valor mínimo)], onde os valores mínimo e máximo são 25 e 85 anos, respectivamente. </p></div>
@@ -394,41 +431,11 @@
             <div class="viz-descricao" id="I_FREQ_PROP"><h2>EDUCAÇÃO: Subíndice de frequência escolar - IDH Educação</h2><p>Subíndice selecionado para compor o IDH Educação, representando a frequência de crianças e jovens à escola em  séries adequadas à sua idade.  É obtido através da média aritmética simples de 4  indicadores:  % de crianças de 5 a 6 anos na escola, % de  crianças de 11 a 13 anos no 2º ciclo do fundamental, % de jovens de 15 a 17 anos com o fundamental completo e % de jovens de 18 a 20 anos com o médio completo. </p></div>
             <div class="viz-descricao" id="T_AGUA"><h2>CONDIÇÕES DE MORADIA: % da população em domicílios com água encanada</h2><p>Razão entre a população que vive em domicílios particulares permanentes com água canalizada para um ou mais cômodos e a população total residente em domicílios particulares permanentes multiplicado por 100. A água pode ser proveniente de rede geral, de poço, de nascente ou de reservatório abastecido por água das chuvas ou carro-pipa.</p></div>
             <div class="viz-descricao" id="T_BANAGUA"><h2>CONDIÇÕES DE MORADIA: % da população em domicílios com banheiro e água encanada</h2><p>Razão entre a população que vive em domicílios particulares permanentes com água encanada em pelo menos um de seus cômodos e com banheiro exclusivo e a população total residente em domicílios particulares permanentes multiplicado por 100. A água pode ser proveniente de rede geral, de poço, de nascente ou de reservatório abastecido por água das chuvas ou carro-pipa. Banheiro exclusivo é definido como cômodo que dispõe de chuveiro ou banheira e aparelho sanitário.</p></div>
-            <div class="viz-descricao" id="T_DENS"><h2>CONDIÇÕES DE MORADIA: % da população em domicílios com densidade > 2 </h2><p>Razão entre a população que vive em domicílios particulares permanentes com densidade superior a 2 e a população total residente em domicílios particulares permanentes multiplicado por 100. A densidade do domicílio é dada pela razão entre o total de moradores do domicílio e o número total de cômodos usados como dormitório.</p</p></div>
+            <div class="viz-descricao" id="T_DENS"><h2>CONDIÇÕES DE MORADIA: % da população em domicílios com densidade > 2 </h2><p>Razão entre a população que vive em domicílios particulares permanentes com densidade superior a 2 e a população total residente em domicílios particulares permanentes multiplicado por 100. A densidade do domicílio é dada pela razão entre o total de moradores do domicílio e o número total de cômodos usados como dormitório.</p></p></div>
             <div class="viz-descricao" id="T_LIXO"><h2>CONDIÇÕES DE MORADIA: % da população em domicílios com coleta de lixo</h2><p>Razão entre a população que vive em domicílios com coleta de lixo e a população total residente em domicílios particulares permanentes multiplicado por 100. Estão incluídas as situações em que a coleta de lixo realizada diretamente por empresa pública ou privada, ou o lixo é depositado em caçamba, tanque ou depósito fora do domicílio, para posterior coleta pela prestadora do serviço. São considerados apenas os domicílios particulares permanentes localizados em área urbana.</p></div>
             <div class="viz-descricao" id="T_LUZ"><h2>CONDIÇÕES DE MORADIA: % da população em domicílios com energia elétrica</h2><p>Razão entre a população que vive em domicílios particulares permanentes com iluminação elétrica e a população total residente em domicílios particulares permanentes multiplicado por 100. Considera-se iluminação proveniente ou não de uma rede geral, com ou sem medidor.</p></div>
             <div class="viz-descricao" id="AGUA_ESGOTO"><h2>CONDIÇÕES DE MORADIA: % de pessoas em domicílios com abastecimento de água e esgotamento sanitário inadequados</h2><p>Razão entre as pessoas que vivem em domicílios cujo abastecimento de água não provem de rede geral e cujo esgotamento sanitário não é realizado por rede coletora de esgoto ou fossa séptica e a população total residente em domicílios particulares permanentes multiplicado por 100. São considerados apenas os domicílios particulares permanentes.</p></div>
             <div class="viz-descricao" id="T_SLUZ"><h2>CONDIÇÕES DE MORADIA: % de pessoas em domicílios sem energia elétrica</h2><p>Razão entre as pessoas que vivem em domicílios sem energia elétrica e população total residente em domicílios particulares permanentes multiplicado por 100. </p></div>
-            
-        	<div id="viz-ano"></div>
-        	<div id="viz-mapa"></div>
-            <div class="viz-mapa-label" id="labelAC">Acre</div>
-            <div class="viz-mapa-label" id="labelAL">Alagoas</div>
-            <div class="viz-mapa-label" id="labelAP">Amapá</div>
-            <div class="viz-mapa-label" id="labelAM">Amazonas</div>
-            <div class="viz-mapa-label" id="labelBA">Bahia</div>
-            <div class="viz-mapa-label" id="labelCE">Ceará</div>
-            <div class="viz-mapa-label" id="labelDF">Distrito Federal</div>
-            <div class="viz-mapa-label" id="labelES">Espírito Santo</div>
-            <div class="viz-mapa-label" id="labelGO">Goiás</div>
-            <div class="viz-mapa-label" id="labelMA">Maranhão</div>
-            <div class="viz-mapa-label" id="labelMT">Mato Grosso</div>
-            <div class="viz-mapa-label" id="labelMS">Mato Grosso do Sul</div>
-            <div class="viz-mapa-label" id="labelMG">Minas Gerais</div>
-            <div class="viz-mapa-label" id="labelPA">Pará</div>
-            <div class="viz-mapa-label" id="labelPB">Paraíba</div>
-            <div class="viz-mapa-label" id="labelPR">Paraná</div>
-            <div class="viz-mapa-label" id="labelPE">Pernambuco</div>
-            <div class="viz-mapa-label" id="labelPI">Piauí</div>
-            <div class="viz-mapa-label" id="labelRJ">Rio de Janeiro</div>
-            <div class="viz-mapa-label" id="labelRN">Rio Grande do Norte</div>
-            <div class="viz-mapa-label" id="labelRS">Rio Grande do Sul</div>
-            <div class="viz-mapa-label" id="labelRO">Rondônia</div>
-            <div class="viz-mapa-label" id="labelRR">Roraima</div>
-            <div class="viz-mapa-label" id="labelSC">Santa Catarina</div>
-            <div class="viz-mapa-label" id="labelSP">São Paulo</div>
-            <div class="viz-mapa-label" id="labelSE">Sergipe</div>
-            <div class="viz-mapa-label" id="labelTO">Tocantins</div>
         </div>
     	<div id="viz-ranking">
         	<div class="viz-select" id="select-barras">
